@@ -22,7 +22,7 @@ import random
 import ruamel.yaml as yaml
 import sys
 import csv
-stimfn = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k0chaotic5B.csv'
+stimfn = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k0chaotic5B.csv'
 stim =  np.genfromtxt(stimfn, dtype=np.float32) 
 plt.subplots_adjust(hspace=0.3)
 times = [0.1*i for i in range(len(stim))]
@@ -536,7 +536,7 @@ def analyze_ecds_no_ML(ECDS,def_vals,files_loc,curr_region="",probe='soma'):
 #         short_name = None    
 
     
-#     files_loc = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/sen_ana_selected2/' + m_type + '_' + e_type + '/'
+#     files_loc = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sen_ana_selected2/' + m_type + '_' + e_type + '/'
 #     my_model = get_model('BBP',log,m_type=m_type,e_type=e_type,cell_i=0)
 #     def_vals = my_model.DEFAULT_PARAMS
     

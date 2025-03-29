@@ -13,9 +13,9 @@ num_param = 3
 '''Generate Plots of Cells STD from csv frpm analyze_sensitivity'''
 
 
-path = "/global/homes/k/ktub1999/mainDL4/DL4neurons2/sen_ana_selected/"
+path = "/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sen_ana_selected/"
 pdf = matplotlib.backends.backend_pdf.PdfPages("STD.pdf")
-df = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/excitatorycells.csv")
+df = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/excitatorycells.csv")
 nregions = 4
 colour=['r','b','g','y']
 flag = False

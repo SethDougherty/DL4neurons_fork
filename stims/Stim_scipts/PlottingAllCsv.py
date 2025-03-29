@@ -5,7 +5,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
 
 # Define the folder containing the CSV files
-folder_path = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/KevinStimsFeb2024/Exp_Stims_Long'
+folder_path = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/KevinStimsFeb2024/Exp_Stims_Long'
 
 # Define the PDF file where the plots will be saved
 pdf_filename = 'plots_all.pdf'

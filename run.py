@@ -80,12 +80,12 @@ def get_model(model, log, m_type=None, e_type=None, cell_i=0, init_cell=False,*p
         model = models.newExcBBP(m_type, e_type, cell_i, *params, log=log)
         model.create_cell()
     elif model =='newM1':
-        mod_path="/global/homes/k/ktub1999/mainDL4/DL4neurons2/newM1hocs"
+        mod_path="/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/newM1hocs"
         model = models.NewM1_TTPC_NA_HH(mod_path,m_type, e_type, cell_i, *params, log=log)
         model.create_cell()
         return model
     elif model == 'M1_TTPC_NA_HH':
-        mod_path="/global/homes/k/ktub1999/mainDL4/DL4neurons2/Neuron_Model_HH"
+        mod_path="/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/Neuron_Model_HH"
         model = models.M1_TTPC_NA_HH(mod_path,m_type, e_type, cell_i, *params)
         model.create_cell()
         return model
@@ -153,9 +153,9 @@ def get_ranges_old(args):
     if(args.cell_count):
         cell_count=args.cell_count
     res=[]
-    default_params_wide= pd.read_csv("/pscratch/sd/k/ktub1999/main/DL4neurons2/sensitivity_analysis/NewBase2/NewBase"+str(int(cell_count))+".csv")
-    default_params_nrow= pd.read_csv("/pscratch/sd/k/ktub1999/main/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams"+str(int(cell_count))+".csv")
-    # default_params= pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase"+str(int(cell_count))+".csv")
+    default_params_wide= pd.read_csv("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase"+str(int(cell_count))+".csv")
+    default_params_nrow= pd.read_csv("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams"+str(int(cell_count))+".csv")
+    # default_params= pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase"+str(int(cell_count))+".csv")
     params=list(default_params_wide["Parameters"])
     # params = model.PARAM_NAMES
     # model_default_params = model.DEFAULT_PARAMS
@@ -296,7 +296,7 @@ def get_random_params_old(args,model,n=1):
     
     default_params_wide= pd.read_csv("./sensitivity_analysis/NewBase2/NewBase"+str(int(count_cell))+".csv")
     default_params_nrow= pd.read_csv("./sensitivity_analysis/NewBase2/MeanParams"+str(int(count_cell))+".csv")
-    # default_params= pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase"+str(int(count_cell))+".csv")
+    # default_params= pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase"+str(int(count_cell))+".csv")
     # model_default_params=model.DEFAULT_PARAMS
     # model_param_names = model.PARAM_NAMES
     for i in range(n):
@@ -354,11 +354,11 @@ def get_random_params_old(args,model,n=1):
 def get_random_params2(args,model,n=1):
     #model = get_model(args.model, log, args.m_type, args.e_type, args.cell_i)
     ranges = model.PARAM_RANGES
-    Default_paramsdf =pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv") 
+    Default_paramsdf =pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv") 
     Default_params = Default_paramsdf["Values"].tolist()
     params = list(Default_paramsdf["Parameters"])
     ranges=[]
-    # Bounds = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/Bounds.csv")
+    # Bounds = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/Bounds.csv")
     pindex=0
     for params_single in Default_params:
         # bounds = Bounds.loc[Bounds['Parameter']==params[pindex]]
@@ -828,7 +828,7 @@ def main(args):
             print("TIMELIMIT,BREAKING after",iSamp)
             # sys.stdout = open(os.devnull, 'w')
             break
-    # plt.savefig("/global/homes/k/ktub1999/mainDL4/DL4neurons2/NewBasePlots/TESTING.png")
+    # plt.savefig("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/NewBasePlots/TESTING.png")
     # plot(args, data, stim)
     h.hoc_stdout()
     now = datetime.now()

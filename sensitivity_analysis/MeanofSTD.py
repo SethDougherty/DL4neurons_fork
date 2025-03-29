@@ -5,7 +5,7 @@ import matplotlib.backends.backend_pdf
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
-CSVpath ="/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/SensitivityCSVs"
+CSVpath ="/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/SensitivityCSVs"
 nregions = 8
 def plotMean():
     pdf = matplotlib.backends.backend_pdf.PdfPages("Mean_all_STD"+".pdf")

@@ -14,8 +14,8 @@ module unload craype-hugepages2M
 
 # All paths relative to this, prepend this for full path name
 #WORKING_DIR=/global/cscratch1/sd/adisaran/DL4neurons
-#OUT_DIR=/global/cfs/cdirs/m2043/adisaran/wrk/
-OUT_DIR=/global/homes/k/ktub1999/testRun/
+# OUT_DIR=/global/cfs/cdirs/m2043/adisaran/wrk/
+OUT_DIR=/global/homes/s/sdough/testRun/
 # simu run in the dir where  Slurm job was started
 
 CELLS_FILE='testcell.csv'
@@ -100,8 +100,8 @@ echo "STIM FILE" $stimfile
 echo "SLURM_NODEID" ${SLURM_NODEID}
 echo "SLURM_PROCID" ${SLURM_PROCID}
 
-REMOTE_CELLS_FILE='/global/homes/k/ktub1999/mainDL4/DL4neurons2/testcell.csv'
-PARAM_VALUE_FILE='/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/L5_STPC-cADpyr-1.csv'
+REMOTE_CELLS_FILE='/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcell.csv'
+PARAM_VALUE_FILE='/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/L5_STPC-cADpyr-1.csv'
 #sbcast ${CELLS_FILE} ${REMOTE_CELLS_FILE}
 REMOTE_CELLS_FILE=${CELLS_FILE}
 echo REMOTE_CELLS_FILE $REMOTE_CELLS_FILE

@@ -14,9 +14,9 @@ import models
 import pandas as pd
 
 # pdf = "Param1.pdf"
-# path="/global/homes/k/ktub1999/mainDL4/DL4neurons2/sen_ana3/"
+# path="/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sen_ana3/"
 # param_name = "gNaTs2.tbar.NaTs2.t.api"
-# df = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/excitatorycells.csv")
+# df = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/excitatorycells.csv")
 # 2D Array 
 # nRanges = 8
 # meanAllCellsRegions =[]
@@ -29,7 +29,7 @@ import pandas as pd
 #     for i_cell in range(1,6):
 
 def printDefault():
-    AllCells = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/testCell3.csv")
+    AllCells = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testCell3.csv")
     dic={}
     for cells in range(len(AllCells)):
         m_type = AllCells["mType"].iloc[cells]

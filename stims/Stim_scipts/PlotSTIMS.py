@@ -14,9 +14,9 @@ x = np.linspace(0,5001,5000,endpoint=False)
 x1 = np.linspace(0,20001,20000,endpoint=False)
 
 for stim in range(len(stims1)):
-    # file = open("/pscratch/sd/k/ktub1999/main/DL4neurons2/stims/4k50kInter"+stims1[stim],"r")
-    # file = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/Exp50k/4k50kInter"+stims1[stim],"r")
-    file = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/Exp50k/chaotic_50khz.csv","r")
+    # file = open("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/4k50kInter"+stims1[stim],"r")
+    # file = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/Exp50k/4k50kInter"+stims1[stim],"r")
+    file = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/Exp50k/chaotic_50khz.csv","r")
     
     data = list(csv.reader(file, delimiter=","))
     file.close()
@@ -25,7 +25,7 @@ for stim in range(len(stims1)):
     #     for y1 in range(len(y)):
     #         y[y1]=y[y1]/1000
 
-    file = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k0chaotic5B.csv","r")
+    file = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k0chaotic5B.csv","r")
     data2 = list(csv.reader(file, delimiter=","))
     file.close()
     y2 = [float(row[0]) for row in data2]

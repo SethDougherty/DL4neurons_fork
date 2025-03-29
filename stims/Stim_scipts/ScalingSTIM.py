@@ -31,8 +31,8 @@ x = np.linspace(0,20001,20000,endpoint=False)
 
 for stim in stims:
     
-    # file = open("/pscratch/sd/k/ktub1999/main/DL4neurons2/stims/Exp50k/"+stim,"r")
-    file = open("/global/homes/k/ktub1999/ExperimentalData/PyForEphys/Data/Stims/cahotic_50khz.csv","r")
+    # file = open("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/Exp50k/"+stim,"r")
+    file = open("/global/homes/s/sdough/ExperimentalData/PyForEphys/Data/Stims/cahotic_50khz.csv","r")
     data = list(csv.reader(file, delimiter=","))
     file.close()
     y = [float(row[0]) for row in data]
@@ -51,14 +51,14 @@ for stim in stims:
     xRes = np.linspace(0,5000,5000)
     plt.plot(xRes,yRes,'r')
     pdf.savefig(fig)
-    # myfile = open("/pscratch/sd/k/ktub1999/main/DL4neurons2/stims/Exp50k/4k50kInter"+stim,"w")
-    myfile = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k50kInterChaoticB.csv","w")
+    # myfile = open("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/Exp50k/4k50kInter"+stim,"w")
+    myfile = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k50kInterChaoticB.csv","w")
     for yU in yRes:
         myfile.write(str(yU)+"\n")
         
 pdf.close()
 
 
-# plt.savefig("/pscratch/sd/k/ktub1999/main/DL4neurons2/UpdatedSTIM.png")
-# plt.savefig("/pscratch/sd/k/ktub1999/main/DL4neurons2/UpdatedSTIM.png")
+# plt.savefig("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/UpdatedSTIM.png")
+# plt.savefig("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/UpdatedSTIM.png")
 

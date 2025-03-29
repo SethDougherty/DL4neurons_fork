@@ -26,13 +26,13 @@ import itertools
 import pickle as pkl
 import random
 import pandas as pd
-stimfn = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k0chaotic5B.csv'
+stimfn = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k0chaotic5B.csv'
 stim =  np.genfromtxt(stimfn, dtype=np.float32) 
 plt.subplots_adjust(hspace=0.3)
 times = [0.025*i for i in range(len(stim))]
 templates_dir = '/global/cfs/cdirs/m2043/hoc_templates/hoc_templates'
-Default_Parameters = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv") 
-Bounds = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/Bounds.csv")
+Default_Parameters = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv") 
+Bounds = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/Bounds.csv")
 # Default_Parameters = Default_Parameters['New Base'].tolist()
 
 
@@ -47,7 +47,7 @@ def make_paramset(my_model,param_ind,nsamples):
 
 def make_paramset_regions(my_model,param_ind,nsamples,nregions,mtype,etype,i_cell):
     def_param_vals = my_model.DEFAULT_PARAMS
-    # Mean_param_values=pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams0.csv")
+    # Mean_param_values=pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams0.csv")
     # def_param_vals = Mean_param_values["Values"]
     a_value = 0
     b_value = 1.5

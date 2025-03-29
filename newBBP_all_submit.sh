@@ -1,12 +1,12 @@
 #!/bin/bash
-INPUT=/pscratch/sd/k/ktub1999/main/DL4neurons2/testcell.csv
-INPUT=/global/homes/k/ktub1999/mainDL4/DL4neurons2/testcell2.csv
-# INPUT=/pscratch/sd/k/ktub1999/main/DL4neurons2/InhibitoryCell.csv
+INPUT=/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcell.csv
+INPUT=/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcell2.csv
+# INPUT=/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/InhibitoryCell.csv
 OLDIFS=$IFS
 IFS=','
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
 count=1
-numSamples=500
+numsamples=100
 export PYTHONPATH=""
 rm -rf ./x86_64
 shifter --image=balewski/ubu20-neuron8:v5 nrnivmodl ./newBBPmechanisims

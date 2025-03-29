@@ -37,7 +37,7 @@ public morphology
 proc morphology(){localobj nl,import
           nl = new Import3d_Neurolucida3()
           nl.quiet = 1
-          nl.input("/global/homes/k/ktub1999/mainDL4/DL4neurons2/newM1hocs/C060114A5.asc")
+          nl.input("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/newM1hocs/C060114A5.asc")
           import = new Import3d_GUI(nl, 0)
           import.instantiate($o1)
           }

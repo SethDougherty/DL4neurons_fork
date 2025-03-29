@@ -13,7 +13,7 @@ axon_K,0.2,1
 axon_KCA,0,1
 axon_HVA,0.2,1
 axon_LVA,-0.4,1
-node_na,-1,1
+node_na,-2,5
 soma_K,-0.8,1
 dend_k,0,1
 dend_Ih,-1,1

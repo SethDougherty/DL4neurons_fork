@@ -14,17 +14,17 @@ num_param = 1
 '''Generate Plots of Cells STD from csv frpm analyze_sensitivity'''
 
 
-path = "/global/homes/k/ktub1999/mainDL4/DL4neurons2/sen_ana7/"
+path = "/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sen_ana7/"
 
-df = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/testCell3.csv")
+df = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testCell3.csv")
 nregions = 1
-para_df = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sen_ana2/L6_TPC_L1_cADpyr_2/sensitivityregion_6.0_7.0_L6_TPC_L1cADpyr.csv")
+para_df = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sen_ana2/L6_TPC_L1_cADpyr_2/sensitivityregion_6.0_7.0_L6_TPC_L1cADpyr.csv")
 colour=['r','b','g','y']
 flag = False
 # total_param = []
 Parameters = para_df['param_name']
-Plot_DIR = "/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/SensitivityPlots"
-CSV_DIR=    "/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/SensitivityCSVs/"
+Plot_DIR = "/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/SensitivityPlots"
+CSV_DIR=    "/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/SensitivityCSVs/"
 right_bound_all_cells = {}
 left_bound_all_cells = {}
 
@@ -169,7 +169,7 @@ for param in range(len(Parameters)):
     Mean_param.to_csv(CSV_DIR+Parameters[param]+"Mean.csv",index=False)
     STD_param.to_csv(CSV_DIR+Parameters[param]+"STD.csv",index=False)
 left_bound_all_cells = pd.DataFrame.from_dict(left_bound_all_cells)
-left_bound_all_cells.to_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/left_bound_all_cells.csv")
+left_bound_all_cells.to_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/left_bound_all_cells.csv")
 right_bound_all_cells = pd.DataFrame.from_dict(right_bound_all_cells)
-right_bound_all_cells.to_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/left_bound_all_cells.csv")
+right_bound_all_cells.to_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/left_bound_all_cells.csv")
 AllPlotsPDF.close()

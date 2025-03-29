@@ -1,6 +1,6 @@
 #!/bin/bash -l
-#SBATCH -N 8
-#SBATCH -t 11:30:00
+#SBATCH -N 16
+#SBATCH -t 06:30:00
 #SBATCH -q regular
 #SBATCH -J DL4N_full_prod
 #SBATCH -L SCRATCH,cfs
@@ -12,12 +12,12 @@
 # Stuff for knl
 # export OMP_NUM_THREADS=128
 module unload craype-hugepages2M
-# cd /pscratch/sd/k/ktub1999/main/DL4neurons2
+# cd /pscratch/sd/s/sdough/main/DL4neurons2
 # All paths relative to this, prepend this for full path name
 #WORKING_DIR=/global/cscratch1/sd/adisaran/DL4neurons
 #OUT_DIR=/global/cfs/cdirs/m2043/adisaran/wrk/
-# OUT_DIR=/global/homes/k/ktub1999/testRun/
-OUT_DIR=/pscratch/sd/k/ktub1999/Jan23Paper/
+OUT_DIR=/pscratch/sd/s/sdough/testRun/
+# OUT_DIR=/pscratch/sd/s/sdough/Jan23Paper/
 # simu run in the dir where  Slurm job was started
 model='M1_TTPC_NA_HH'
 # rm -rf ./x86_64
@@ -115,8 +115,8 @@ echo "numParamSets" $numParamSets
 
 
 echo "numParamSets" $numParamSets
-REMOTE_CELLS_FILE='/pscratch/sd/k/ktub1999/main/DL4neurons2/excitatorycells.csv'
-PARAM_VALUE_FILE='/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv'
+REMOTE_CELLS_FILE='/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/excitatorycells.csv'
+PARAM_VALUE_FILE='/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv'
 #sbcast ${CELLS_FILE} ${REMOTE_CELLS_FILE}
 REMOTE_CELLS_FILE=${CELLS_FILE}
 echo REMOTE_CELLS_FILE $REMOTE_CELLS_FILE

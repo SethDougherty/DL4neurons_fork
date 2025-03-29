@@ -23,8 +23,8 @@ def add_waveforms(waveform1, waveform2):
     return result
 
 # Example usage
-ramp_file = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/ramp.csv'
-chaotic_file = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k50kInterChaoticB.csv'
+ramp_file = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/ramp.csv'
+chaotic_file = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k50kInterChaoticB.csv'
 pdf = matplotlib.backends.backend_pdf.PdfPages("ChaoticRAMP.pdf") 
 
 ramp = read_waveform_from_csv(ramp_file)
@@ -46,6 +46,6 @@ plt.plot(x,ramp_chaotic,'b')
 plt.title("ChaoticRAMP")
 pdf.savefig(fig)
 pdf.close()
-myfile = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5kChaoticRamp.csv","w")
+myfile = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5kChaoticRamp.csv","w")
 for yU in ramp_chaotic:
         myfile.write(str(yU)+"\n")

@@ -24,7 +24,7 @@ import json
 import itertools
 import pickle as pkl
 import random
-stimfn = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/step_500.csv'
+stimfn = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/step_500.csv'
 stim =  np.genfromtxt(stimfn, dtype=np.float32) 
 plt.subplots_adjust(hspace=0.3)
 times = [0.025*i for i in range(len(stim))]
@@ -170,7 +170,7 @@ def main_for_divided_range():
     e_type = sys.argv[2]
     nsamples = int(sys.argv[3])
     
-    files_loc = f'/global/homes/k/ktub1999/mainDL4/DL4neurons2/sen_ana_selected2/{m_type}_{e_type}/'
+    files_loc = f'/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sen_ana_selected2/{m_type}_{e_type}/'
     os.makedirs(files_loc,exist_ok=True)
     procid = [0]
     if(len(sys.argv)>4):

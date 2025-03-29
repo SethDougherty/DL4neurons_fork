@@ -1598,7 +1598,7 @@ class M1_TTPC_NA_HH(BaseModel):
         # self.axon_proper = h.cell.axon[1]
         
       
-        # self.tes1("/pscratch/sd/k/ktub1999/main/DL4neurons2/Neuron_Model_HH")
+        # self.tes1("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/Neuron_Model_HH")
         hobj = h.cell
         self.entire_cell = hobj
         return h.cell.soma[0]
@@ -1638,7 +1638,7 @@ class M1_TTPC_NA_HH(BaseModel):
     
     def _get_rec_pts(self):
         # if not hasattr(self, 'probes'):
-        self.probes = list(OrderedDict.fromkeys(get_rec_pts_for_M1(self.entire_cell,axon_targets = [150],dend_targets = [50])))
+        self.probes = list(OrderedDict.fromkeys(get_rec_pts_for_M1(self.entire_cell,axon_targets = [50],dend_targets = [150])))
         return self.probes
     def _n_rec_pts(self):
         return len(self._get_rec_pts())

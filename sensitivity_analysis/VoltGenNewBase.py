@@ -10,29 +10,29 @@ import matplotlib.backends.backend_pdf
 from datetime import datetime
 
 stim_files=['chaotic3.csv']
-stimfn = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/'
+stimfn = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/'
 
-NewBaseCsv = "/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase/L6_TPC_L1 cADpyr 1.csv"
+NewBaseCsv = "/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase/L6_TPC_L1 cADpyr 1.csv"
 NewBase = pd.read_csv(NewBaseCsv)
 BaseVal = NewBase["New Base"].tolist()
 DefVal = NewBase["Old Base"].tolist()
 mtype="L6_TPC_L1"
 etype="cADpyr"
 itype =1
-cells = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/testCell3.csv")
+cells = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testCell3.csv")
 for cell in range(len(cells)):
     mtype =cells['mType'].iloc[cell]
     etype =cells['eType'].iloc[cell]
     for itype in range(0,5):
-        pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/k/ktub1999/mainDL4/DL4neurons2/NewBasePlots/"+mtype+etype+str(itype)+".pdf")
+        pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/NewBasePlots/"+mtype+etype+str(itype)+".pdf")
         for stim_file in stim_files:
             stim =  np.genfromtxt(stimfn+stim_file, dtype=np.float32) 
             now = datetime.now()
 
             current_time = now.strftime("%H:%M:%S")
             print("Before Sim =", current_time)
-            all_paramsets = np.genfromtxt("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv", dtype=np.float32)
-            all_paramsets = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv")
+            all_paramsets = np.genfromtxt("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv", dtype=np.float32)
+            all_paramsets = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv")
             all_paramsets=list(all_paramsets["Values"])
             my_model = get_model('BBP',log,mtype,etype,itype)
             a = my_model.PARAM_RANGES
@@ -82,6 +82,6 @@ for cell in range(len(cells)):
             # pdf.savefig(fig)
         
 
-    #plt.savefig("/global/homes/k/ktub1999/mainDL4/DL4neurons2/NewBasePlots/"+mtype+etype+str(itype)+".png")
+    #plt.savefig("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/NewBasePlots/"+mtype+etype+str(itype)+".png")
     
         pdf.close()

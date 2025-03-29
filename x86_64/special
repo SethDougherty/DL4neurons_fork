@@ -14,4 +14,4 @@ if test "" = "yes" ; then
 else
     NRNIV="${NRNBIN}/nrniv"
 fi
-"${NRNIV}" -dll "/pscratch/sd/k/ktub1999/main/DL4neurons2/x86_64/.libs/libnrnmech.so" "$@"
+"${NRNIV}" -dll "/global/u2/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/x86_64/.libs/libnrnmech.so" "$@"

@@ -4,7 +4,7 @@
 #SBATCH -q debug
 #SBATCH -t 30:00
 #SBATCH -J ALL_CLONES
-#SBATCH --output /global/homes/k/ktub1999/mainDL4/DL4neurons2/logs/Ktub/%A_%a  # job-array encodding
+#SBATCH --output /global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/logs/Ktub/%A_%a  # job-array encodding
 #SBATCH --image=balewski/ubu20-neuron8:v5
 #SBATCH --array 1-1 #a
 

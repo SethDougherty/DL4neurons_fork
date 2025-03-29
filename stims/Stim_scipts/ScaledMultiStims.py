@@ -1,12 +1,12 @@
 import pandas as pd
 
 def scale_and_save_csv(input_csv, scale_factors, output_prefix):
-    df = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/"+input_csv+'.csv')
+    df = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/"+input_csv+'.csv')
     
     for factor in scale_factors:
         scaled_df = df * factor
         output_csv = f'{input_csv}_{factor:.2f}x.csv'
-        scaled_df.to_csv("/pscratch/sd/k/ktub1999/main/DL4neurons2/stims/scaled_stims/"+output_csv, index=False)
+        scaled_df.to_csv("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/scaled_stims/"+output_csv, index=False)
         print(f'Saved scaled CSV: {output_csv}')
 
     

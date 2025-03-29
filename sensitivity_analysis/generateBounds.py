@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-CSVpath ="/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/SensitivityCSVs"
+CSVpath ="/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/SensitivityCSVs"
 def generateBounds():
     Bound ={}
     Bound["Parameter"]=[]
@@ -42,7 +42,7 @@ def generateBounds():
         count+=1
         maxVals.append(name)
     df = pd.DataFrame(maxVals)
-    df.to_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/MaxCells.csv",index=False)
+    df.to_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/MaxCells.csv",index=False)
     df = pd.DataFrame(Bound)
-    df.to_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/Bounds.csv",index=False)
+    df.to_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/Bounds.csv",index=False)
 generateBounds()

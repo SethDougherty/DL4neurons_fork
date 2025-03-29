@@ -16,8 +16,8 @@ module unload craype-hugepages2M
 # All paths relative to this, prepend this for full path name
 #WORKING_DIR=/global/cscratch1/sd/adisaran/DL4neurons
 #OUT_DIR=/global/cfs/cdirs/m2043/adisaran/wrk/
-# OUT_DIR=/global/homes/k/ktub1999/testRun/
-OUT_DIR=/pscratch/sd/k/ktub1999/Jan24PaperData/
+OUT_DIR=/global/homes/s/sdough/testRun/
+# OUT_DIR=/pscratch/sd/s/sdough/Jan24PaperData/
 # simu run in the dir where  Slurm job was started
 model='newBBP'
 
@@ -116,8 +116,8 @@ echo "numParamSets" $numParamSets
 
 
 echo "numParamSets" $numParamSets
-REMOTE_CELLS_FILE='/pscratch/sd/k/ktub1999/main/DL4neurons2/excitatorycells.csv'
-PARAM_VALUE_FILE='/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv'
+REMOTE_CELLS_FILE='/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/excitatorycells.csv'
+PARAM_VALUE_FILE='/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv'
 #sbcast ${CELLS_FILE} ${REMOTE_CELLS_FILE}
 REMOTE_CELLS_FILE=${CELLS_FILE}
 echo REMOTE_CELLS_FILE $REMOTE_CELLS_FILE

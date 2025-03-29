@@ -25,11 +25,11 @@ def resample_by_interpolation(signal, input_fs, output_fs):
     return resampled_signal
 
 stims = ['chaotic3.csv','step_200.csv','ramp.csv','chirp.csv','step_500.csv']
-pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/k/ktub1999/mainDL4/DL4neurons2/UpdatedSTIM.pdf") 
+pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/UpdatedSTIM.pdf") 
 x = np.linspace(0,4001,4000,endpoint=False)
 
 for stim in stims:
-    file = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/"+stim,"r")
+    file = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/"+stim,"r")
     data = list(csv.reader(file, delimiter=","))
     file.close()
     y = [float(row[0]) for row in data]
@@ -43,12 +43,12 @@ for stim in stims:
     plt.clf()
     plt.plot(xUpdated,yUpdated,'r')
     pdf.savefig(fig)
-    myfile = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/Updated"+stim,"w")
+    myfile = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/Updated"+stim,"w")
     for yU in yUpdated:
         myfile.write(str(yU)+"\n")
         
 pdf.close()
 
-plt.savefig("/global/homes/k/ktub1999/mainDL4/DL4neurons2/UpdatedSTIM.png")
+plt.savefig("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/UpdatedSTIM.png")
 
 

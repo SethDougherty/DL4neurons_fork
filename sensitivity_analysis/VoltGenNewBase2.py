@@ -13,17 +13,17 @@ from datetime import datetime
 stim_filesN = ['Updatedchaotic4.csv','Updatedstep_200.csv','Updatedramp.csv','Updatedchirp.csv','Updatedstep_500.csv']
 stim_filesN = ['2kchaotic3.csv','2kstep_200.csv','2kramp.csv','2kchirp.csv','2kstep_500.csv']
 stim_filesO = ['chaotic4.csv','step_200.csv','ramp.csv','chirp.csv','step_500.csv']
-stimfn = '/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/'
+stimfn = '/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/'
 
-NewBaseCsv = "/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase/L6_TPC_L1 cADpyr 1.csv"
+NewBaseCsv = "/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase/L6_TPC_L1 cADpyr 1.csv"
 NewBase = pd.read_csv(NewBaseCsv)
 BaseVal = NewBase["New Base"].tolist()
 DefVal = NewBase["Old Base"].tolist()
 mtype="L6_TPC_L1"
 etype="cADpyr"
 itype =1
-cells = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/testCell3.csv")
-pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/k/ktub1999/mainDL4/DL4neurons2/NewBasePlots/ALLCELLS.pdf")
+cells = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testCell3.csv")
+pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/NewBasePlots/ALLCELLS.pdf")
 for cell in range(len([0])):
     mtype =cells['mType'].iloc[cell]
     etype =cells['eType'].iloc[cell]
@@ -35,8 +35,8 @@ for cell in range(len([0])):
 
             current_time = now.strftime("%H:%M:%S")
             print("Before Sim =", current_time)
-            all_paramsets = np.genfromtxt("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv", dtype=np.float32)
-            all_paramsets = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams.csv")
+            all_paramsets = np.genfromtxt("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/BaseTest.csv", dtype=np.float32)
+            all_paramsets = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams.csv")
             all_paramsets=list(all_paramsets["Values"])
             my_model = get_model('BBP',log,mtype,etype,itype)
             a = my_model.PARAM_RANGES
@@ -121,6 +121,6 @@ for cell in range(len([0])):
             # pdf.savefig(fig)
         
 
-    #plt.savefig("/global/homes/k/ktub1999/mainDL4/DL4neurons2/NewBasePlots/"+mtype+etype+str(itype)+".png")
+    #plt.savefig("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/NewBasePlots/"+mtype+etype+str(itype)+".png")
     
 pdf.close()

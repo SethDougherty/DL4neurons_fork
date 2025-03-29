@@ -1,4 +1,4 @@
-INPUT=/global/homes/k/ktub1999/mainDL4/DL4neurons2/testcellInhEtypes.csv
+INPUT=/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcellInhEtypes.csv
 OLDIFS=$IFS
 IFS=','
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }

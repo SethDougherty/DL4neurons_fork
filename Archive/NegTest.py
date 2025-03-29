@@ -3,7 +3,7 @@ from run import get_model
 import logging as log
 
 
-Cells = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/excitatorycells.csv")
+Cells = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/excitatorycells.csv")
 
 mTypes = Cells['mType']
 eTypes = Cells['eType']

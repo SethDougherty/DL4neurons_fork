@@ -29,11 +29,11 @@ stims = ['chaotic_50khz.csv','step_200_50khz.csv','ramp_50khz.csv','chirp_50khz.
 stims = ['chaotic_50khz.csv']
 pdf = matplotlib.backends.backend_pdf.PdfPages("ChaoticSTIM.pdf") 
 x = np.linspace(0,10001,10000,endpoint=False)
-dir = "/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/NewChaotic/"
+dir = "/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/NewChaotic/"
 
 for stim in os.listdir(dir):
     
-    # file = open("/pscratch/sd/k/ktub1999/main/DL4neurons2/stims/Exp50k/"+stim,"r")
+    # file = open("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/Exp50k/"+stim,"r")
     file = open(dir+stim,"r")
     data = list(csv.reader(file, delimiter=","))
     file.close()
@@ -54,14 +54,14 @@ for stim in os.listdir(dir):
     plt.plot(xRes,yRes,'r')
     plt.title(stim)
     pdf.savefig(fig)
-    # myfile = open("/pscratch/sd/k/ktub1999/main/DL4neurons2/stims/Exp50k/4k50kInter"+stim,"w")
-    # myfile = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k50kInterChaoticB.csv","w")
+    # myfile = open("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/Exp50k/4k50kInter"+stim,"w")
+    # myfile = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k50kInterChaoticB.csv","w")
     # for yU in yRes:
     #     myfile.write(str(yU)+"\n")
         
 pdf.close()
 
 
-# plt.savefig("/pscratch/sd/k/ktub1999/main/DL4neurons2/UpdatedSTIM.png")
-# plt.savefig("/pscratch/sd/k/ktub1999/main/DL4neurons2/UpdatedSTIM.png")
+# plt.savefig("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/UpdatedSTIM.png")
+# plt.savefig("/pscratch/sd/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/UpdatedSTIM.png")
 

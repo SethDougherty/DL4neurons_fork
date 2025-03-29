@@ -29,7 +29,7 @@ def mean_all_default():
     for j in range(18):
         a=[]
         exp_params.append(a)
-    AllCells = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/testCell3.csv")
+    AllCells = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testCell3.csv")
     for cells in range(len(AllCells)):
         m_type = AllCells["mType"].iloc[cells]
         e_type = AllCells["eType"].iloc[cells]
@@ -52,7 +52,7 @@ def mean_all_default():
     print(lin_param)
     avg_param.append(lin_param)
     df = pd.DataFrame({"Prameters":param_names,"Values":avg_param})
-    df.to_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams.csv",index=False)
+    df.to_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/MeanParams.csv",index=False)
            
 
 mean_all_default()

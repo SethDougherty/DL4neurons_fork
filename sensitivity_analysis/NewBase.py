@@ -6,8 +6,8 @@ import pandas as pd
 import numpy as np
 import os
 
-df = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/testCell3.csv")
-Bounds = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/Bounds.csv")
+df = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testCell3.csv")
+Bounds = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/Bounds.csv")
 
 linear = ['epass_all', 'stim_ampl_fact', 'stim_hold_curr']
 
@@ -59,17 +59,17 @@ def saveNewBase():
                         NewBase.append(parameters[j])
                 Data[m_type+"_"+e_type+"_"+str(i_cell)]=NewBase
     Base = pd.DataFrame(Data)
-    Base.to_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv",index=False)    
+    Base.to_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv",index=False)    
 
 def changeBase():
-    OldMeanBase = pd.read_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv")
+    OldMeanBase = pd.read_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv")
     oldParam=OldMeanBase["Values"]
     param = OldMeanBase["Parameters"]
     
     newParams = oldParam*math.sqrt(10)
     # Base = pd.DataFrame({"Parameters":param,"Values":newParams})
-    # Base.to_csv("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv",index=False)    
-    np.savetxt("/global/homes/k/ktub1999/mainDL4/DL4neurons2/sensitivity_analysis/NewBase2/TEST.csv",list(oldParam))
+    # Base.to_csv("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/NewBase.csv",index=False)    
+    np.savetxt("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/sensitivity_analysis/NewBase2/TEST.csv",list(oldParam))
 
 # saveNewBase()
 changeBase()

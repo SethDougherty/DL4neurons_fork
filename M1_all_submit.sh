@@ -1,7 +1,7 @@
 #!/bin/bash
-# INPUT=/pscratch/sd/k/ktub1999/main/DL4neurons2/testcell.csv
-# INPUT=/global/homes/k/ktub1999/mainDL4/DL4neurons2/testcell.csv
-INPUT=/global/homes/k/ktub1999/mainDL4/DL4neurons2/testcell.csv
+# INPUT=/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcell.csv
+# INPUT=/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcell.csv
+INPUT=/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcell.csv
 OLDIFS=$IFS
 IFS=','
 

@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
 
 def UpdateChaotic():
-    pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/k/ktub1999/mainDL4/DL4neurons2/UpdatedChaotic.pdf") 
-    file = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k0chaotic5B.csv","r")
+    pdf = matplotlib.backends.backend_pdf.PdfPages("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/UpdatedChaotic.pdf") 
+    file = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k0chaotic5B.csv","r")
     data = list(csv.reader(file, delimiter=","))
     file.close()
     yold = [float(row[0]) for row in data]
@@ -17,7 +17,7 @@ def UpdateChaotic():
     plt.clf()
     plt.plot(y)
     pdf.savefig(fig)
-    myfile = open("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k0chaotic5B.csv","w")
+    myfile = open("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k0chaotic5B.csv","w")
     for yU in y:
         myfile.write(str(yU)+"\n")
     pdf.close()
@@ -27,7 +27,7 @@ def add150():
    Stims=["chaotic4.csv","step_200.csv","chirp.csv","ramp.csv","step_500.csv"]
    for sim in Stims:
         a= np.zeros(1000)
-        data = np.genfromtxt("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/"+sim)
+        data = np.genfromtxt("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/"+sim)
         a=np.append(a,data)
-        np.savetxt("/global/homes/k/ktub1999/mainDL4/DL4neurons2/stims/5k0"+sim,a)
+        np.savetxt("/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/stims/5k0"+sim,a)
 UpdateChaotic()

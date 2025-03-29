@@ -16,8 +16,8 @@ module unload craype-hugepages2M
 # All paths relative to this, prepend this for full path name
 #WORKING_DIR=/global/cscratch1/sd/adisaran/DL4neurons
 #OUT_DIR=/global/cfs/cdirs/m2043/adisaran/wrk/
-# OUT_DIR=/global/homes/k/ktub1999/testRun/
-OUT_DIR=/pscratch/sd/k/ktub1999/BBP_TEST1/
+OUT_DIR=/global/homes/s/sdough/testRun/
+# OUT_DIR=/pscratch/sd/s/sdough/BBP_TEST1/
 # simu run in the dir where  Slurm job was started
 
 CELLS_FILE='testcell.csv'
@@ -183,8 +183,8 @@ echo "STIM FILE" $stimfile
 echo "SLURM_NODEID" ${SLURM_NODEID}
 echo "SLURM_PROCID" ${SLURM_PROCID}
 numParamSets=10
-REMOTE_CELLS_FILE='/pscratch/sd/k/ktub1999/main/DL4neurons2/testcell.csv'
-PARAM_VALUE_FILE='/global/homes/k/ktub1999/plots/Exp_Data/temp_param.csv'
+REMOTE_CELLS_FILE='/global/homes/s/sdough/Neuron_Latest_Pipeline/DL4neurons2/testcell.csv'
+PARAM_VALUE_FILE='/global/homes/s/sdough/plots/Exp_Data/temp_param.csv'
 #sbcast ${CELLS_FILE} ${REMOTE_CELLS_FILE}
 REMOTE_CELLS_FILE=${CELLS_FILE}
 echo REMOTE_CELLS_FILE $REMOTE_CELLS_FILE
@@ -208,7 +208,7 @@ do
          --model M1_TTPC_NA_HH --cell-i ${l} \
           --cori-csv ${REMOTE_CELLS_FILE} --num 11  --cori-start ${START_CELL} --cori-end ${END_CELL} \
           --trivial-parallel --print-every 5 --linear-params-inds 12 17 18 --stim-dc-offset 0 --stim-multiplier 1\
-          --dt 0.1 --param-file /pscratch/sd/k/ktub1999/compare/bestFit_results/xander_param.csv"
+          --dt 0.1 --param-file /pscratch/sd/s/sdough/compare/bestFit_results/xander_param.csv"
         echo "args" $args
         srun --input none -k -n $((${SLURM_NNODES}*${THREADS_PER_NODE})) --ntasks-per-node ${THREADS_PER_NODE} shifter python3 -u run.py $args
 
