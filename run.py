@@ -757,6 +757,7 @@ def main(args):
             print("first element =", all_paramsets[0])
             paramsets = all_paramsets[start:stop, :]
         paramsets = np.atleast_2d(paramsets)
+        upar = np.zeros(shape=paramsets.shape, dtype=np.float32)
         # paramsets = np.tanh(paramsets)
         print("Shape of parameters:",paramsets.shape)
         # print("Param Size",paramsets.size)
